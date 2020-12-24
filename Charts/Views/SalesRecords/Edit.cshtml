@@ -1,0 +1,49 @@
+﻿@model Charts.Models.SalesRecords
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SalesRecords</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SaleDate" class="control-label"></label>
+                <input asp-for="SaleDate" class="form-control" />
+                <span asp-validation-for="SaleDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Electronics" class="control-label"></label>
+                <input asp-for="Electronics" class="form-control" />
+                <span asp-validation-for="Electronics" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookAndMedia" class="control-label"></label>
+                <input asp-for="BookAndMedia" class="form-control" />
+                <span asp-validation-for="BookAndMedia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeAndKitchen" class="control-label"></label>
+                <input asp-for="HomeAndKitchen" class="form-control" />
+                <span asp-validation-for="HomeAndKitchen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
